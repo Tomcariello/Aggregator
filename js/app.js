@@ -11,13 +11,13 @@ $('#submit').on('click', function() {
   
 })
 
-// function checkZipCode(zipCodeToSearch){
-//   if (zipCodeToSearch.length == "5") {
-//     if (parseInt(zipCodeToSearch) == true {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-// }
+function checkZipCode(zipCodeToSearch){
+  if (zipCodeToSearch.length() == 5) {
+    if (parseInt(zipCodeToSearch) == true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
