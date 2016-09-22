@@ -6,6 +6,7 @@ $('#submit').on('click', function() {
   zipCodeToSearch = $('#zipCode').val().trim();
   console.log("zip code to search is " + zipCodeToSearch);
   searchTermToSearch = $('#searchTerm').val().trim();
+  console.log(zipCodeToSearch)
   displaySportInfo(searchTermToSearch,zipCodeToSearch);
   $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
   
