@@ -2,7 +2,7 @@ var returnedOdds;
 var returnedSports;
 
 function getOdds(){
-  var url = 'https://crossorigin.me/https://jsonoddsapi.herokuapp.com/odds';
+  var url = 'https://jsonoddsapi.herokuapp.com/odds';
 
   $.ajax({url: url, method: 'GET'}).done(function(response){
     // change this to handle the response
@@ -13,7 +13,7 @@ function getOdds(){
 }
 
 function getSportsObject(sport){
-  var url = 'https://crossorigin.me/https://jsonoddsapi.herokuapp.com/sports/'+sport;
+  var url = 'https://jsonoddsapi.herokuapp.com/sports/'+sport;
 
   $.ajax({url: url, method: 'GET'}).done(function(response){
     // change this to handle the response
