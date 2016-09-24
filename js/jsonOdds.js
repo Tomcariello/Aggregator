@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 function getSportsObject(sport){
   var url = 'https://crossorigin.me/https://jsonoddsapi.herokuapp.com/sports/'+sport
 
