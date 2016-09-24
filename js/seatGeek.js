@@ -19,8 +19,9 @@ function displaySportInfo(sport,postal_code){
     var currentResult = response;
     console.log(response);
     console.log(currentResult);
-    $('#seatgeek').html(stringify(currentResult));
+    $('#seatgeek').html(JSON.stringify(currentResult));
     // console.log(sport);
+    console.log(response.url);
   })
 }
 
