@@ -15,3 +15,8 @@ function getSportsObject(sport){
     console.log(response);
   });
 }
+
+getSportsObject('MLB');
+
+getOdds();
+
