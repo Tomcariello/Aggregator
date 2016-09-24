@@ -17,14 +17,16 @@ function displaySportInfo(sport,postal_code){
   .done(function(response){
 
     var currentResult = response;
-    console.log(response);
-    console.log(currentResult);
-    $('#seatgeek').html(JSON.stringify(currentResult));
-    // console.log(sport);
-    console.log(response.url);
+    printSportInfo(currentResult);
+   
   })
 }
-
+function printSportInfo(currentResult){
+ $('#seatgeek').html(JSON.stringify(currentResult));
+    // console.log(sport);
+    // console.log(sport.currentResult.url);
+    console.log(currentResult.events[0].url);
+}
 
 
 
