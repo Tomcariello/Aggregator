@@ -30,6 +30,10 @@ function printSportInfo(currentResult){
           var p = $('<p>');
 
           p.append(currentResult.events[i].url);
+          p.append(currentResult.events[i].stats.lowest_price);
+           p.append(currentResult.events[i].stats.highest_price);
+            p.append(currentResult.events[i].datetime_local);
+             p.append(currentResult.events[i].short_title);
           console.log("p variable is " + p);
           $('#seatgeek').append(p);
 
