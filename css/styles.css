@@ -4,3 +4,12 @@ li	{
 #searchTerm {
     width: 178px;
 }
+table, td {
+	border: 1px solid #ffffff;
+}
+td {
+	width:200px;
+}
+th {
+	font-size: 20px;
+}

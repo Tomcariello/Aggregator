@@ -29,21 +29,24 @@ function printSportInfo(currentResult){
         var table = $('<table>');
         $('#seatgeek').append(table);
 
+        newHeader = $('<tr>');
+        newHeader.append($("<th>").html("Event:"));
+        newHeader.append($("<th>").html("Price low to high"));
+        newHeader.append($("<th>").html("Date"));
+        table.append(newHeader);
+
         for (i=0; i<currentResult.meta.total; i++){
+          
           newRow = $('<tr>');
 
-          // p.append(currentResult.events[i].short_title + "<br>");
-          // p.append(currentResult.events[i].url + "<br>");
-          // p.append(currentResult.events[i].stats.lowest_price + "<br>");
-          // p.append(currentResult.events[i].stats.highest_price + "<br>");
-          // p.append(currentResult.events[i].datetime_local + "<br>");
           var titleLink = $('<a>').attr('href', currentResult.events[i].url).html(currentResult.events[i].short_title);
-          var lowestPriceLink = $('<a>').attr('href', currentResult.events[i].url).html(currentResult.events[i].stats.lowest_price);
-          var highestPriceLink = $('<a>').attr('href', currentResult.events[i].url).html(currentResult.events[i].stats.highest_price);
+          var lowestPriceLink = $('<a>').attr('href', currentResult.events[i].url).html("$" + currentResult.events[i].stats.lowest_price + "-" + currentResult.events[i].stats.highest_price);
+          // var highestPriceLink = $('<a>').attr('href', currentResult.events[i].url).html(" - $" + currentResult.events[i].stats.highest_price);
           var datetimeLink = $('<a>').attr('href', currentResult.events[i].url).html(currentResult.events[i].datetime_local);
+
           newRow.append($("<td>").html(titleLink));
           newRow.append($("<td>").html(lowestPriceLink));
-          newRow.append($("<td>").html(highestPriceLink));
+          // newRow.append($("<td>").html(highestPriceLink));
           newRow.append($("<td>").html(datetimeLink));
           table.append(newRow);
           // console.log("p variable is " + p);          
