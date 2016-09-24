@@ -1,35 +1,22 @@
-function getSportsObject(sport){
-  var url = 'https://crossorigin.me/https://jsonoddsapi.herokuapp.com/sports/'+sport
+function getOdds(){
+  var url = 'https://crossorigin.me/https://jsonoddsapi.herokuapp.com/odds';
 
   $.ajax({url: url, method: 'GET'}).done(function(response){
-    return response;
+    // change this to handle the response
+    console.log(response);
   });
 }
 
-function JSONOdds(searchTerm) {
+function getSportsObject(sport){
+  var url = 'https://crossorigin.me/https://jsonoddsapi.herokuapp.com/sports/'+sport;
 
-  var  sports = [];
-
-  var apiKey = "bb90e449-8058-11e6-8199-067e79ca11d3";
-  var queryUrl = "https://jsonodds.com/api/odds/";
-
-  $.ajax({
-          url: queryUrl,
-          method: "Get",
-          beforeSend: function(xhr){xhr.setRequestHeader("JsonOdds-API-Key", apiKey);},
-        })
-        .done(function(response) {
-            console.log("does it work", response);
-
-        });
-  function showSport(){
-
-        $("#bettingOdds").empty();
-    }
-
-    console.log("something")
-
+  $.ajax({url: url, method: 'GET'}).done(function(response){
+    // change this to handle the response
+    console.log(response);
+  });
 }
 
 getSportsObject('MLB');
+
+getOdds();
 
