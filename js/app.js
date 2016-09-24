@@ -1,12 +1,18 @@
+//Initialize variables
 var zipCodeToSearch;
 var searchTermToSearch;
 
 $('#submit').on('click', function() {
-  console.log("Submit button clicked.");
+
+  //obtain zip code and verify that it is a 5 digit numeric value
   zipCodeToSearch = $('#zipCode').val().trim();
   checkZipCode(zipCodeToSearch);
+
+  //obtain search term
   searchTermToSearch = $('#searchTerm').val().trim();
   displaySportInfo(searchTermToSearch,zipCodeToSearch);
+
+  //update page with results from JSON odds API
   $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
   
 })
