@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // var  sports = [];
 
 // var apiKey = "bb90e449-8058-11e6-8199-067e79ca11d3";
@@ -61,4 +60,3 @@ function JSONOdds(searchTerm) {
     console.log("something")
 
 }
->>>>>>> master
