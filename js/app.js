@@ -4,32 +4,22 @@ var searchTermToSearch;
 
 $('#submit').on('click', function() {
 
-  //obtain zip code and verify that it is a 5 digit numeric value
+  //obtain zip code
   zipCodeToSearch = $('#zipCode').val().trim();
-  checkZipCode(zipCodeToSearch);
+  //Verify the zip code is a 5 digit numeric value before proceeding
+  if (isNaN(zipCodeToSearch) == false && zipCodeToSearch > 0) {
+    
+    //obtain search term
+    searchTermToSearch = $('#searchTerm').val().trim();
 
-  //obtain search term
-  searchTermToSearch = $('#searchTerm').val().trim();
+    //call seatgeek API with necessary info
+    displaySportInfo(searchTermToSearch,zipCodeToSearch);
 
-  //call seatgeek API with info
-  displaySportInfo(searchTermToSearch,zipCodeToSearch);
+    //call betting odds API with necessary info
+    getSportsObject(searchTermToSearch);
 
-  //call betting odds API with info
-  getSportsObject(searchTermToSearch);
-
-  //update page with results from JSON odds API
-  // $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
-  
-})
-
-function checkZipCode(zipCodeToSearch){
-  if (zipCodeToSearch.length == 5) {
-    if (parseInt(zipCodeToSearch) != NaN) {
-      console.log("is a 5 digit number");
-      return false;
-    }
   } else {
-      console.log("is not a 5 digit number");
+    console.log("enter a valid zip code");
   }
-}
 
+})
