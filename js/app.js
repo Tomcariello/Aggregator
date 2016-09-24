@@ -15,10 +15,10 @@ $('#submit').on('click', function() {
   displaySportInfo(searchTermToSearch,zipCodeToSearch);
 
   //call betting odds API with info
-  // BETTINGODDS(searchTermToSearch,zipCodeToSearch);
+  getSportsObject(searchTermToSearch);
 
   //update page with results from JSON odds API
-  $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
+  // $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
   
 })
 
