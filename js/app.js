@@ -10,7 +10,12 @@ $('#submit').on('click', function() {
 
   //obtain search term
   searchTermToSearch = $('#searchTerm').val().trim();
+
+  //call seatgeek API with info
   displaySportInfo(searchTermToSearch,zipCodeToSearch);
+
+  //call betting odds API with info
+  // BETTINGODDS(searchTermToSearch,zipCodeToSearch);
 
   //update page with results from JSON odds API
   $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
@@ -23,7 +28,6 @@ function checkZipCode(zipCodeToSearch){
       console.log("is a 5 digit number");
       return false;
     }
-
   } else {
       console.log("is not a 5 digit number");
   }
