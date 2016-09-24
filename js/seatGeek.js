@@ -39,17 +39,14 @@ function printSportInfo(currentResult){
           
           newRow = $('<tr>');
 
-          var titleLink = $('<a>').attr('href', currentResult.events[i].url).html(currentResult.events[i].short_title);
-          var lowestPriceLink = $('<a>').attr('href', currentResult.events[i].url).html("$" + currentResult.events[i].stats.lowest_price + "-" + currentResult.events[i].stats.highest_price);
-          // var highestPriceLink = $('<a>').attr('href', currentResult.events[i].url).html(" - $" + currentResult.events[i].stats.highest_price);
-          var datetimeLink = $('<a>').attr('href', currentResult.events[i].url).html(currentResult.events[i].datetime_local);
+          var titleLink = $('<a>').attr('href', currentResult.events[i].url).attr("target", "new").html(currentResult.events[i].short_title);
+          var lowestPriceLink = $('<a>').attr('href', currentResult.events[i].url).attr("target", "new").html("$" + currentResult.events[i].stats.lowest_price + ".00-" + currentResult.events[i].stats.highest_price + ".00");
+          var datetimeLink = $('<a>').attr('href', currentResult.events[i].url).attr("target", "new").html(currentResult.events[i].datetime_local);
 
           newRow.append($("<td>").html(titleLink));
           newRow.append($("<td>").html(lowestPriceLink));
-          // newRow.append($("<td>").html(highestPriceLink));
           newRow.append($("<td>").html(datetimeLink));
           table.append(newRow);
-          // console.log("p variable is " + p);          
 
           if (i == 9) {
             return false;
