@@ -1,20 +1,24 @@
-var  sports = [];
+function JSONOdds(searchTerm) {
 
-var apiKey = "bb90e449-8058-11e6-8199-067e79ca11d3";
-var queryUrl = "https://jsonodds.com/api/odds/";
+  var  sports = [];
 
-$.ajax({
-        url: queryUrl,
-        method: "Get",
-        beforeSend: function(xhr){xhr.setRequestHeader("JsonOdds-API-Key", apiKey);},
-      })
-      .done(function(response) {
-          console.log("does it work", response);
+  var apiKey = "bb90e449-8058-11e6-8199-067e79ca11d3";
+  var queryUrl = "https://jsonodds.com/api/odds/";
 
-      });
-function showSport(){
+  $.ajax({
+          url: queryUrl,
+          method: "Get",
+          beforeSend: function(xhr){xhr.setRequestHeader("JsonOdds-API-Key", apiKey);},
+        })
+        .done(function(response) {
+            console.log("does it work", response);
 
-      $("#bettingOdds").empty();
-  }
+        });
+  function showSport(){
 
-  console.log("something")
+        $("#bettingOdds").empty();
+    }
+
+    console.log("something")
+
+}
