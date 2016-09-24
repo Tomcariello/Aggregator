@@ -6,7 +6,7 @@ var queryUrl = "https://jsonodds.com/api/odds/";
 $.ajax({
         url: queryUrl,
         method: "Get",
-        beforeSend: function(xhr){xhr.setRequestHeader("JsonOdds-API-Key", apiKey);},
+        beforeSend: function(xhr){xhr.setRequestHeader("jsonodds-api-key", apiKey)},
       })
       .done(function(response) {
           console.log("does it work", response);
