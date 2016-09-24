@@ -4,7 +4,7 @@
 // Aggregator
 // Client ID:  NTc3MjcxNHwxNDc0NDk4NTQx
 // Secret: u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W
- 
+var currentResult; 
 function displaySportInfo(sport,postal_code){
   //  var sport = 'soccer';
   // var postal_code = 08540;
@@ -16,7 +16,7 @@ function displaySportInfo(sport,postal_code){
   })
   .done(function(response){
 
-    var currentResult = response;
+     currentResult = response;
     printSportInfo(currentResult);
    
   })
