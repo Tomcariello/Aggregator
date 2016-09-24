@@ -22,17 +22,6 @@ function displaySportInfo(sport,postal_code){
   })
 }
 function printSportInfo(currentResult){
-<<<<<<< HEAD
-=======
- // $('#seatgeek').html(JSON.stringify(currentResult));
-    // console.log(sport);
-    // console.log(sport.currentResult.url);
-     console.log(currentResult.events[0].url);
-    if(currentResult.meta.total>0){
-        for (i=0; i>currentResult.meta.total; i++){
-      $('#seatgeek').append(currentResult.events[i].url);
-        
->>>>>>> 749429b770f7547e1f9609a0b2c99b33ae74772c
 
     console.log(currentResult.events[0].url);
     if(currentResult.meta.total > 0){
