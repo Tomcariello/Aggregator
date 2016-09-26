@@ -1,0 +1,35 @@
+li	{
+	display: inline-block;
+}
+#searchTerm {
+    width: 178px;
+}
+.output {
+    border: 1px solid #ffffff;
+    width: 45%;
+    margin: 15px;
+}
+table, td, th {
+	border: 1px solid #ffffff;
+}
+td > a {
+	width:200px;
+	color: #000000;
+	font-size: 16px;
+}
+th {
+	font-size: 20px;
+  color: #000000;
+}
+.dataDisplay {
+    background-color: #ffffff;
+    opacity: .8;
+}
+h2 {
+  font-size: 22px;
+  color: #000000;
+}
+p {
+  font-family: 'Raleway';  sans-serif;
+  font-size: 12px;;
+}
