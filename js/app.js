@@ -18,9 +18,13 @@ $('#submit').on('click', function() {
   getSportsObject(searchTermToSearch);
 
   //update page with results from JSON odds API
-  // $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
-  
-})
+  $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
+//
+  $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
+  $('#bettingOdds').html(data);
+});
+//
+});
 
 function checkZipCode(zipCodeToSearch){
   if (zipCodeToSearch.length == 5) {
