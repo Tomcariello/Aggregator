@@ -25,6 +25,7 @@ function getSportsObject(sport){
 
 // getSportsObject('MLB');
 
+//What exactly is this doing?
 getOdds();
 
 function printOdds(){

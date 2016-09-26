@@ -1,0 +1,22 @@
+li	{
+	display: inline-block;
+}
+#searchTerm {
+    width: 178px;
+}
+.output {
+    border: 1px solid #ffffff;
+    width: 45%;
+    margin: 15px;
+}
+table, td, th {
+	border: 1px solid #ffffff;
+}
+td > a {
+	width:200px;
+	color: yellow;
+	font-size: 16px;
+}
+th {
+	font-size: 20px;
+}
