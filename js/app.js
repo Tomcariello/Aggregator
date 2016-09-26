@@ -18,8 +18,23 @@ $('#submit').on('click', function() {
     //call betting odds API with necessary info
     getSportsObject(searchTermToSearch);
 
+    //update page with results from JSON odds API
+    $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
+
+    $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
+    $('#bettingOdds').html(data);
+  }
+//
+});
+
+function checkZipCode(zipCodeToSearch){
+  if (zipCodeToSearch.length == 5) {
+    if (parseInt(zipCodeToSearch) != NaN) {
+      console.log("is a 5 digit number");
+      return false;
+    }
   } else {
     console.log("enter a valid zip code");
   }
 
-})
+}
