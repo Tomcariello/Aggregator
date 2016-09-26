@@ -32,7 +32,7 @@ function getSportsObject(sport){
 }
 
 function printOdds(){
-  $('#bettingOdds').html("");
+  // $('#bettingOdds').html("");
 
   var table = $('<table>');
   $('#bettingOdds').append(table);
