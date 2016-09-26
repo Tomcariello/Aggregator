@@ -2,7 +2,7 @@
 // created Client ID with seatGeek
 // Client ID:  NTc3MjcxNHwxNDc0NDk4NTQx
 // Secret: u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W
-var currentResult; 
+var currentSeatResult; 
 function displaySportInfo(sport,postal_code){
   
   var queryURL = 'https://api.seatgeek.com/2/events?q='+sport+'&postal_code='+postal_code+'&client_id=NTc3MjcxNHwxNDc0NDk4NTQx&client_secret=u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W';
@@ -12,14 +12,14 @@ function displaySportInfo(sport,postal_code){
   })
   .done(function(response){
 
-    currentResult = response;
-    printSportInfo(currentResult);
+    currentSeatResult = response;
+    printSportInfo(currentSeatResult);
    
   })
 }
-function printSportInfo(currentResult){
-    // console.log(currentResult.events[0].url);
-    if(currentResult.meta.total > 0){
+function printSportInfo(currentSeatResult){
+    // console.log(currentSeatResult.events[0].url);
+    if(currentSeatResult.meta.total > 0){
         $('#seatgeek').html("");
         var table = $('<table>');
         $('#seatgeek').append(table);
@@ -30,13 +30,13 @@ function printSportInfo(currentResult){
         newHeader.append($("<th>").html("Date"));
         table.append(newHeader);
 
-        for (i=0; i<currentResult.meta.total; i++){
+        for (i=0; i<currentSeatResult.meta.total; i++){
           
           newRow = $('<tr>');
 
-          var titleLink = $('<a>').attr('href', currentResult.events[i].url).attr("target", "new").html(currentResult.events[i].short_title);
-          var lowestPriceLink = $('<a>').attr('href', currentResult.events[i].url).attr("target", "new").html("$" + currentResult.events[i].stats.lowest_price + ".00-" + currentResult.events[i].stats.highest_price + ".00");
-          var datetimeLink = $('<a>').attr('href', currentResult.events[i].url).attr("target", "new").html(currentResult.events[i].datetime_local);
+          var titleLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].short_title);
+          var lowestPriceLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html("$" + currentSeatResult.events[i].stats.lowest_price + ".00-" + currentSeatResult.events[i].stats.highest_price + ".00");
+          var datetimeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].datetime_local);
 
           newRow.append($("<td>").html(titleLink));
           newRow.append($("<td>").html(lowestPriceLink));
