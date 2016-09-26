@@ -22,7 +22,8 @@ $('#submit').on('click', function() {
     $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
 
     $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
-    $('#bettingOdds').html(data);
+      $('#bettingOdds').html(data);
+    });
   }
 //
 });
