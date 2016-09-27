@@ -1,9 +1,7 @@
 li	{
 	display: inline-block;
 }
-#searchTerm {
-    width: 178px;
-}
+
 .output {
     border: 1px solid #ffffff;
     width: 45%;
@@ -26,31 +24,33 @@ td {
 }
 
 #sports {
-  font-size: 60px; 
-  font-family: 'Raleway', sans-serif;
+  font-size: 85px; 
+  font-family: 'Alfa Slab One';
 }
 
 .searchHead{
   font-family: 'Raleway', sans-serif;
+
 }
 
-#searchBox {
-  border-radius: 20px; 
+#searchTerm {
+  border-radius: 20px;
+
 }
 
-#zipBox {
-  border-radius: 20px; 
+#zipCode {
+  border-radius: 20px;
 }
 
 #submit {
-  border-color: #FFFFFF; 
-  color: #000000; 
+  border-color: #fff;
+  color: #fff;
   font-family: 'Raleway', sans-serif;
-  border-radius: 20px; 
+  border-radius: 20px;
 }
 
 #resultsHead {
-  text-align: center; 
+  text-align: center;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -80,6 +80,7 @@ td {
   border-color: #9663D3; 
   border-radius: 25px; 
   color: #fff
+  background-color: #fff;
 }
 
 #buttonDesign {
@@ -93,4 +94,23 @@ td {
 #footerText {
   font-family: 'Raleway', sans-serif; font-size: 12px;
 }
+
+/*.form-control {
+  border-radius: 20px; 
+}*/
+
+input { 
+    text-align: center; 
+    /*width: 3px;*/
+}
+
+#back-to-top {
+  color: white;
+  background-color: black;
+  border-color: black;
+  /*text-align: center;*/
+  margin: 0, auto;
+}
+
+
 
