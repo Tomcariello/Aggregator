@@ -14,36 +14,13 @@ table, td, th {
 }
 td > a {
 	width:200px;
-	color: #000000;
+	color: yellow;
 	font-size: 16px;
 }
 th {
 	font-size: 20px;
-  color: #000000;
 }
-.dataDisplay {
-    background-color: #ffffff;
-    opacity: .8;
-}
-h2 {
-  font-size: 22px;
-  color: #000000;
-}
-p {
-  font-family: 'Raleway';  sans-serif;
-  font-size: 12px;;
-}
-.intro {
-  display: table;
-  width: 100%;
-  height: auto;
-  padding: 100px 0;
-  text-align: center;
-  color: white;
-  background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background: url(../img/baseball.jpg) no-repeat bottom center scroll;
+
+td {
+  color:black;
 }
