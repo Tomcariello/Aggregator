@@ -56,7 +56,7 @@ $content .= '</tr>';
 
     $content.= $game['HomeTeam'];
     $content.= '</td><td>';
-    $content.= $game['PointSpreadHome'];
+    $content.= $game['AwayTeam'];
     $content.= '</td><td>';
     // $content.= $game['MatchTime'];
 
@@ -69,7 +69,7 @@ $content .= '</tr>';
           // $content.= '</td><td>';
           // $content.= $odds['MoneyLineAway'];
           // $content.= '</td><td>';
-          $content.= $odds['AwayTeam'];
+          $content.= $odds['PointSpreadHome'];
           $content.= '</td><td>';
           // $content.= $odds['PointSpreadAway'];
           // $content.= '</td><td>';
