@@ -45,8 +45,10 @@ td {
 #submit {
   border-color: #fff;
   color: #fff;
+  background-color: #000000;
   font-family: 'Raleway', sans-serif;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 #resultsHead {
