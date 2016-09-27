@@ -3,6 +3,7 @@ var zipCodeToSearch;
 var searchTermToSearch;
 
 $('#submit').on('click', function() {
+  console.log("button clicked");
 
   //obtain zip code
   zipCodeToSearch = $('#zipCode').val().trim();
