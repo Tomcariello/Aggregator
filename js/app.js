@@ -42,7 +42,7 @@ function checkZipCode(zipCodeToSearch){
 
 }
 
-function changeBackground(sport) {
-  .intro {
-  background: url(../img/soccer.jpg) no-repeat bottom center scroll;
-}
+// function changeBackground(sport) {
+//   .intro {
+//   background: url(../img/soccer.jpg) no-repeat bottom center scroll;
+// }
