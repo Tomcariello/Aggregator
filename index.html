@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="css/grayscale.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>
 
@@ -103,20 +104,20 @@
                 <div class="row">
                     <div class="col-md-12">
                     <br>
-                        <h1 class="brand-heading" style="font-size: 60px; font-family: 'Raleway', sans-serif;">The Sports Aggregator</h1>
+                        <h1 class="brand-heading" id="sports">The Sports Aggregator</h1>
                             <section id="download" class="text-center">
         <div class="">
             <div class="container">
                 <div class="col-lg-6 col-lg-offset-3" >
                     <div class="form-group">
-                        <label for="zipCode" style="font-family: 'Raleway', sans-serif;">Zip Code:</label>
-                        <input type="number" class="form-control" style="border-radius: 20px; font-family: Helvetica;" id="zipCode">
+                        <label for="zipCode" class="searchHead">Zip Code:</label>
+                        <input type="number" class="form-control" id="zipBox">
                     </div>
                     <div class="form-group">
-                        <label for="searchTerm" style="font-family: 'Raleway', sans-serif;">Search:</label>
-                        <input type="text" class="form-control" style="border-radius: 20px; font-family: 'Raleway', sans-serif;" id="searchTerm">
+                        <label for="searchTerm" class="searchHead">Search:</label>
+                        <input type="text" class="form-control" id="searchBox">
                         <br>
-                        <button type="submit" class="btn btn-default" style="border-radius: 20px; border-color: #FFFFFF; color: #000000; font-family: 'Raleway', sans-serif;" id="submit">GO</button>
+                        <button type="submit" class="btn btn-default" id="goButton" id="submit">GO</button>
                     </div>
                 </div>
             </div>
@@ -130,12 +131,12 @@
     <section id="about" class="container ">
         <div class="row">
             <div class="col-lg-6">
-                <h2 style="text-align: center; font-family: 'Raleway', sans-serif;">Tickets</h2>
-                <div id="seatgeek" style="color: #fff;"></div>
+                <h2 class="resultsHead">Tickets</h2>
+                <div id="seatgeek"></div>
             </div>
             <div class="col-lg-6" >
-                <h2 style="text-align: center; font-family: 'Raleway', sans-serif;">Odds</h2>
-                <div id="bettingOdds" style="color: #fff"> </div>
+                <h2 class="resultsHead">Odds</h2>
+                <div id="bettingOdds"> </div>
             </div>
         </div>
     </section>
@@ -144,13 +145,13 @@
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2" style="margin-top: -86px;">
-                <h2 style="font-family: 'Raleway', sans-serif;">About</h2>
-                <p style="text-align: justify; font-family: 'Raleway', sans-serif;"">Created as a collaborative project by Tom Cariello, Aanchal (Annie) Gupta, Melissa Baldwin, and Jesse Happel. Using the SeatGeek and JsonOdds APIs, The Sports Aggregator provides sports betting fanatics with reliable odds for a full variety of sports events along with easy access to tickets to get to the game! 
+            <div class="col-lg-8 col-lg-offset-2" id="aboutDiv">
+                <h2 id="aboutHead">About</h2>
+                <p id="aboutText">Created as a collaborative project by Tom Cariello, Aanchal (Annie) Gupta, Melissa Baldwin, and Jesse Happel. Using the SeatGeek and JsonOdds APIs, The Sports Aggregator provides sports betting fanatics with reliable odds for a full variety of sports events along with easy access to tickets to get to the game! 
  </p>
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://github.com/Tomcariello/Aggregator.git" class="btn btn-default btn-lg" style="border-color: #9663D3; border-radius: 25px; color: #fff"><i class="fa fa-github fa-fw" style="color: #9663D3"></i> <span class="network-name" style="color: #9663D3">Github</span></a>
+                        <a href="https://github.com/Tomcariello/Aggregator.git" class="btn btn-default btn-lg" id="githubBtn"><i class="fa fa-github fa-fw" id="buttonDesign"></i> <span class="network-name" id="githubText">Github</span></a>
                     </li>
                 </ul>
             </div>
@@ -158,7 +159,7 @@
     </section>
     <footer>
         <div class="container text-center">
-            <p style="font-family: 'Raleway', sans-serif; font-size: 12px;">Copyright &copy; Tom Cariello - Aanchal (Annie) Gupta - Melissa Baldwin - Jesse Happel - 2016</p>
+            <p id="footerText">Copyright &copy; Tom Cariello - Aanchal (Annie) Gupta - Melissa Baldwin - Jesse Happel - 2016</p>
         </div>
     </footer>
     <!-- jQuery -->
