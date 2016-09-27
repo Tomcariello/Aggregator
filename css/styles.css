@@ -22,7 +22,7 @@ th {
 }
 
 td {
-  color:black;
+  color: yellow;
 }
 
 #sports {
@@ -42,14 +42,11 @@ td {
   border-radius: 20px; 
 }
 
-#goButton {
-  border-radius: 20px; 
-}
-
 #submit {
   border-color: #FFFFFF; 
   color: #000000; 
   font-family: 'Raleway', sans-serif;
+  border-radius: 20px; 
 }
 
 #resultsHead {
