@@ -28,19 +28,26 @@ function printSportInfo(currentSeatResult){
         newHeader.append($("<th>").html("Event:"));
         newHeader.append($("<th>").html("Price low to high"));
         newHeader.append($("<th>").html("Date"));
+        newHeader.append($("<th>").html("Time"));
         table.append(newHeader);
 
         for (i=0; i<currentSeatResult.meta.total; i++){
           
           newRow = $('<tr>');
-
           var titleLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].short_title);
           var lowestPriceLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html("$" + currentSeatResult.events[i].stats.lowest_price + ".00-" + currentSeatResult.events[i].stats.highest_price + ".00");
-          var datetimeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].datetime_local);
+          var convertedDateTime = currentSeatResult.events[i].datetime_local.split("T").join(" & ");
+          var timeSplit = currentSeatResult.events[i].datetime_local.split("T");
+          var date = timeSplit[0];
+          var time = timeSplit[1];
+          var dateLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(date);
+          var timeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(time);
+
 
           newRow.append($("<td>").html(titleLink));
           newRow.append($("<td>").html(lowestPriceLink));
-          newRow.append($("<td>").html(datetimeLink));
+          newRow.append($("<td>").html(dateLink));
+          newRow.append($("<td>").html(timeLink));
           table.append(newRow);
 
           if (i == 9) {
