@@ -33,7 +33,7 @@ function getSportsObject(sport){
 }
 
 function printOdds(){
-  $('#bettingOdds').html("");
+  // $('#bettingOdds').html("");
 
   var table = $('<table>');
   $('#bettingOdds').append(table);
@@ -44,6 +44,6 @@ function printOdds(){
   var homeOdds = $('<tr>').attr(currentResult[i]).html(currentResult[i].pointSpreadHome).val().trim();
   var awayOdds = $('<tr>').attr(currentResult[i]).html(currentResult[i].pointSpreadAway).val().trim();
 
-  $('#bettingOdds').append(JSON.stringify(returnedSports) + "|" + JSON.stringify(returnedOdds));
+  console.log((JSON.stringify(returnedSports) + "|" + JSON.stringify(returnedOdds)));
   }
 }
