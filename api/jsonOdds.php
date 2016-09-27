@@ -55,8 +55,7 @@ $content .= '</tr>';
     $content.= '<tr><td>';
 
     $content.= $game['HomeTeam'];
-    $content.= '</td><td>';
-    $content.= $game['AwayTeam'];
+    $content.= '</td>';
     // $content.= '</td><td>';
     // $content.= $game['MatchTime'];
 
@@ -90,6 +89,9 @@ $content .= '</tr>';
           $content.= '</td>';
       }
     }
+    $content.= '<td>';
+    $content.= $game['AwayTeam'];
+    $content.='</td>';
     
     $content .= '</tr>';
   
