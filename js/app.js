@@ -26,7 +26,7 @@ $('#submit').on('click', function() {
     });
   }
 
-  // changeBackground(searchTermToSearch);
+  changeBackground(searchTermToSearch);
 //
 });
 
@@ -42,7 +42,6 @@ function checkZipCode(zipCodeToSearch){
 
 }
 
-// function changeBackground(sport) {
-//   .intro {
-//   background: url(../img/soccer.jpg) no-repeat bottom center scroll;
-// }
+function changeBackground(sport) {
+  $('#mainWindow').css("background-image", "url(img/" + sport + ".jpg)");  
+}
