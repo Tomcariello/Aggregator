@@ -24,3 +24,76 @@ th {
 td {
   color:black;
 }
+
+#sports {
+  font-size: 60px; 
+  font-family: 'Raleway', sans-serif;
+}
+
+.searchHead{
+  font-family: 'Raleway', sans-serif;
+}
+
+#searchBox {
+  border-radius: 20px; 
+}
+
+#zipBox {
+  border-radius: 20px; 
+}
+
+#goButton {
+  border-radius: 20px; 
+}
+
+#submit {
+  border-color: #FFFFFF; 
+  color: #000000; 
+  font-family: 'Raleway', sans-serif;
+}
+
+#resultsHead {
+  text-align: center; 
+  font-family: 'Raleway', sans-serif;
+}
+
+#seatgeek {
+  color: #fff;
+}
+
+#bettingOdds {
+  color: #fff
+}
+
+#aboutDiv {
+  /*margin-top: -86px*/
+  /*not currently needed, but might need later to space page*/
+}
+
+#aboutHead {
+  font-family: 'Raleway', sans-serif;
+}
+
+#aboutText {
+  text-align: justify; 
+  font-family: 'Raleway', sans-serif;
+}
+
+#githubBtn {
+  border-color: #9663D3; 
+  border-radius: 25px; 
+  color: #fff
+}
+
+#buttonDesign {
+  color: #9663D3;
+}
+
+#githubText {
+  color: #9663D3
+}
+
+#footerText {
+  font-family: 'Raleway', sans-serif; font-size: 12px;
+}
+
