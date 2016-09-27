@@ -8,6 +8,7 @@ function getOdds(odds){
   $.ajax({url: url, method: 'GET'}).done(function(response){
     // change this to handle the response
     console.log("getodds is " + response);
+    console.log(JSON.stringify(returnedSports));
     returnedOdds = response;
   })
     .done(function(response){

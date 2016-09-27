@@ -25,6 +25,8 @@ $('#submit').on('click', function() {
       $('#bettingOdds').html(data);
     });
   }
+
+  // changeBackground(searchTermToSearch);
 //
 });
 
@@ -38,4 +40,9 @@ function checkZipCode(zipCodeToSearch){
     console.log("enter a valid zip code");
   }
 
+}
+
+function changeBackground(sport) {
+  .intro {
+  background: url(../img/soccer.jpg) no-repeat bottom center scroll;
 }
