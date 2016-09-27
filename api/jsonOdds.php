@@ -56,10 +56,10 @@ $content .= '</tr>';
 
     $content.= $game['HomeTeam'];
     $content.= '</td><td>';
-    $content.= $game['AwayTeam'];
+    $content.= $game['PointSpreadHome'];
     $content.= '</td><td>';
-    $content.= $game['MatchTime'];
-    $content.= '</td>';
+    // $content.= $game['MatchTime'];
+    // $content.= '</td>';
   //Loop through nested JSON results under the "Odds" section
     foreach($game['Odds'] as $odds) {
       if($odds['OddType']=='Game') {
@@ -68,7 +68,7 @@ $content .= '</tr>';
           // $content.= '</td><td>';
           // $content.= $odds['MoneyLineAway'];
           // $content.= '</td><td>';
-          $content.= $odds['PointSpreadHome'];
+          $content.= $odds['AwayTeam'];
           $content.= '</td><td>';
           // $content.= $odds['PointSpreadAway'];
           // $content.= '</td><td>';
