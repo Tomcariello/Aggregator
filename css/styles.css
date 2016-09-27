@@ -45,8 +45,10 @@ td {
 #submit {
   border-color: #fff;
   color: #fff;
+  background-color: #000000;
   font-family: 'Raleway', sans-serif;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 #resultsHead {
@@ -79,8 +81,8 @@ td {
 #githubBtn {
   border-color: #9663D3; 
   border-radius: 25px; 
-  color: #fff
-  background-color: #fff;
+  color: #000000;
+  background-color: #000000;
 }
 
 #buttonDesign {
