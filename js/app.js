@@ -45,5 +45,5 @@ function checkZipCode(zipCodeToSearch){
 
 function changeBackground(sport) {
   // $('#mainWindow').css("background-image", "url(img/" + sport + ".jpg)");  
-  $('#testing').css("background-image", "url(img/" + sport + ".jpg)");  
+  $('#APIData').css("background-image", "url(img/" + sport + ".jpg)");  
 }
