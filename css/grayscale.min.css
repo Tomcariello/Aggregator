@@ -186,7 +186,7 @@ a:hover {
     .intro {
         height: 100%;
         padding: 0
-        background: url(../img/baseball.jpg) bottom center no-repeat #000;
+        background: url(../img/jumbotron/baseball.jpg) bottom center no-repeat #000;
     }
     .intro .intro-body .brand-heading {
         font-size: 100px
