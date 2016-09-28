@@ -12,7 +12,7 @@ table, td, th {
 }
 td > a {
 	width:200px;
-	color: white;
+	color: yellow;
 	font-size: 16px;
 }
 th {
@@ -21,12 +21,6 @@ th {
 
 td {
   color: yellow;
-}
-
-.resultsDiv {
-  background-color: black;
-  padding: 10px;
-  opacity: 0.75;
 }
 
 #sports {
@@ -39,20 +33,13 @@ td {
 
 }
 
-#searchOptions {
-  /*border-radius: 20px;*/
-}
-
-.form-control {
+#searchTerm {
   border-radius: 20px;
-}
 
-/*.searchTerm {
-  border-radius: 20px;
-}does not work*/
+}
 
 #zipCode {
-  /*border-radius: 20px;*/
+  border-radius: 20px;
 }
 
 #submit {
@@ -78,10 +65,10 @@ td {
   color: #fff
 }
 
-/*#aboutDiv {
-  margin-top: -86px
-  not currently needed, but might need later to space page
-}*/
+#aboutDiv {
+  /*margin-top: -86px*/
+  /*not currently needed, but might need later to space page*/
+}
 
 #aboutHead {
   font-family: 'Raleway', sans-serif;
@@ -111,18 +98,14 @@ td {
   font-family: 'Raleway', sans-serif; font-size: 12px;
 }
 
+/*.form-control {
+  border-radius: 20px; 
+}*/
+
 input { 
     text-align: center; 
     /*width: 3px;*/
 }
-
-select {
-  width: 400px; 
-  text-align-last:center; 
-  -webkit-appearance: none;
-  -webkit-border-radius: 20px;
-}
-
 /*
 #back-to-top {
   color: white;
