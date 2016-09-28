@@ -49,8 +49,19 @@ function printSportInfo(currentSeatResult){
           var time = timeSplit[1];
           // to remove seconds display from the time.
           var secRemoveTime = time.split("",5);
+
+          var hours =time.split(":");
+          console.log(hours[0]);
+          var ampm = "AM"
+          if (hours[0] > 12) {
+            hours[0] = hours[0]-12;
+            ampm = "PM";
+            console.log(hours[0]);
+          }
+          console.log(ampm)
+
           var dateLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(date);
-          var timeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(secRemoveTime);
+          var timeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(hours[0] + ":" + hours[1] +  ampm);
 
           // Appending these links to their respective columns.
           newRow.append($("<td>").html(titleLink));
