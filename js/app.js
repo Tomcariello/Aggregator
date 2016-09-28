@@ -2,6 +2,14 @@
 var zipCodeToSearch;
 var searchTermToSearch;
 
+
+$('#upBox').on('click', function() {
+  //Animate to the top section
+  $('html, body').animate({
+    scrollTop: $("#mainWindow").offset().top
+  }, 1000);
+})
+
 $('#submit').on('click', function() {
   console.log("button clicked");
 
@@ -20,7 +28,7 @@ $('#submit').on('click', function() {
     getSportsObject(searchTermToSearch);
 
     //update page with results from JSON odds API
-    $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
+    // $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
 
     $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
       $('#bettingOdds').html(data);
@@ -28,7 +36,12 @@ $('#submit').on('click', function() {
   }
 
   changeBackground(searchTermToSearch);
-//
+
+  //Animate to the data section
+  $('html, body').animate({
+    scrollTop: $("#APIData").offset().top
+  }, 1000);
+
 });
 
 function checkZipCode(zipCodeToSearch){
