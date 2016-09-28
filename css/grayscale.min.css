@@ -19,6 +19,7 @@ body {
 body,
 html {
     width: 100%
+    /*background-color: black;*/
 }
 
 body {
@@ -161,6 +162,7 @@ a:hover {
     padding: 100px 0;
     text-align: center;
     color: #fff;
+    background: url(../img/jumbotron/baseball.jpg) bottom center no-repeat #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -184,6 +186,7 @@ a:hover {
     .intro {
         height: 100%;
         padding: 0
+        background: url(../img/baseball.jpg) bottom center no-repeat #000;
     }
     .intro .intro-body .brand-heading {
         font-size: 100px
@@ -230,7 +233,7 @@ content-section {
     @media (max-width:767px) {
         ul.banner-social-buttons li {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             padding: 0
         }
         ul.banner-social-buttons li:last-child {
