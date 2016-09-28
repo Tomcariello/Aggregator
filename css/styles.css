@@ -63,6 +63,7 @@ td {
   border-radius: 20px;
   font-size: 18px;
   margin-top: 20px;
+  outline: none;
 }
 
 #resultsHead {
@@ -116,6 +117,7 @@ td {
 
 #footerText {
   font-family: 'Raleway', sans-serif; font-size: 12px;
+  /*margin-top: -25px;*/
 }
 
 input { 
@@ -141,5 +143,9 @@ select {
 
 label {
   font-size: 24px;
+}
+
+hr {
+  width: 50%;
 }
 
