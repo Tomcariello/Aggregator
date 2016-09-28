@@ -2,6 +2,12 @@
 var zipCodeToSearch;
 var searchTermToSearch;
 
+$('#upBox').on('click', function() {
+  $('html, body').animate({
+    scrollTop: $("#mainWindow").offset().top
+  }, 1000);
+  })
+
 $('#submit').on('click', function() {
   console.log("button clicked");
 
