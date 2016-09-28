@@ -78,6 +78,13 @@ td {
   color: #fff
 }
 
+#odds {
+  height:450px;
+  width:500px;
+  border:1px hidden #ccc;
+  overflow-y:scroll;
+}
+
 /*#aboutDiv {
   margin-top: -86px
   not currently needed, but might need later to space page
