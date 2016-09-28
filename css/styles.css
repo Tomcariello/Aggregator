@@ -153,6 +153,7 @@ hr {
 
 #APIData {
   width: 100%;
+  background-repeat: no-repeat;
 }
 
 #pic {
