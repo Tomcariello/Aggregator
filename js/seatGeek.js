@@ -36,13 +36,25 @@ function printSportInfo(currentSeatResult){
         newHeader.append($("<th>").html("Date"));
         newHeader.append($("<th>").html("Time"));
         table.append(newHeader);
-
+        var lowestPrice;
+        var highestPrice;
         for (i=0; i<currentSeatResult.meta.total; i++){
+
+             if(currentSeatResult.events[i].stats.lowest_price == null){
+              lowestPrice = "";
+              highestPrice ="NA";
+              }else{
+                lowestPrice = "$" + currentSeatResult.events[i].stats.lowest_price + ".00-";
+                highestPrice = "$" + currentSeatResult.events[i].stats.highest_price + ".00";
+              }
+           
           // Creating links to the pushed data and storing them under their respective variables.
           var newRow = $('<tr>');
+
           var titleLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].short_title);
-          var lowestPriceLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html("$" + currentSeatResult.events[i].stats.lowest_price + ".00-" + currentSeatResult.events[i].stats.highest_price + ".00");
+          var lowestPriceLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html( lowestPrice  +  highestPrice );
           // to seperate  date from time, we use split().
+
           var convertedDateTime = currentSeatResult.events[i].datetime_local.split("T").join(" & ");
           var timeSplit = currentSeatResult.events[i].datetime_local.split("T");
           var date = timeSplit[0];
