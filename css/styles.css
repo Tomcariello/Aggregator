@@ -49,6 +49,7 @@ td {
   font-family: 'Raleway', sans-serif;
   border-radius: 20px;
   font-size: 18px;
+  margin-top: 20px;
 }
 
 #resultsHead {
@@ -105,14 +106,16 @@ input {
     text-align: center; 
     /*width: 3px;*/
 }
-
+/*
 #back-to-top {
   color: white;
   background-color: black;
   border-color: black;
-  /*text-align: center;*/
+  /*text-align: center;
   margin: 0, auto;
+}*/
+
+label {
+  font-size: 24px;
 }
-
-
 

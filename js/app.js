@@ -2,14 +2,6 @@
 var zipCodeToSearch;
 var searchTermToSearch;
 
-
-$('#upBox').on('click', function() {
-  //Animate to the top section
-  $('html, body').animate({
-    scrollTop: $("#mainWindow").offset().top
-  }, 1000);
-})
-
 $('#submit').on('click', function() {
   console.log("button clicked");
 
@@ -21,6 +13,31 @@ $('#submit').on('click', function() {
     //obtain search term
     searchTermToSearch = $('#searchTerm').val().trim();
 
+    //convert search term to JSONOdds API friendly terms
+    if (searchTermToSearch == "Soccer") {
+      searchTermToSearch = "soccer";
+    } else if (searchTermToSearch == "NFL Football") {
+      searchTermToSearch = "nfl";
+    } else if (searchTermToSearch == "NCAA Football") {
+      searchTermToSearch = "ncaaf";
+    } else if (searchTermToSearch == "NBA Basketball") {
+      searchTermToSearch = "nba";
+    } else if (searchTermToSearch == "MLB Baseball") {
+      searchTermToSearch = "mlb";
+    } else if (searchTermToSearch == "NHL Hockey") {
+      searchTermToSearch = "nhl";
+    } else if (searchTermToSearch == "WNBA Basketball") {
+      searchTermToSearch = "wnba";
+    } else if (searchTermToSearch == "Cricket") {
+      searchTermToSearch = "cricket";
+    } else if (searchTermToSearch == "Tennis") {
+      searchTermToSearch = "tennis";
+    } else if (searchTermToSearch == "Horse Racing") {
+      searchTermToSearch = "horse_racing";
+    } else if (searchTermToSearch == "Mixed Martial Arts") {
+      searchTermToSearch = "mma";
+    }
+   
     //call seatgeek API with necessary info
     displaySportInfo(searchTermToSearch,zipCodeToSearch);
 
