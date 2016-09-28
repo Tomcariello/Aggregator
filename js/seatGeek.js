@@ -32,7 +32,7 @@ function printSportInfo(currentSeatResult){
         var newHeader = $('<tr>');
         // Adding columns under row and pushing data respectively into it.
         newHeader.append($("<th>").html("Event:"));
-        newHeader.append($("<th>").html("Price low to high"));
+        newHeader.append($("<th>").html("Price"));
         newHeader.append($("<th>").html("Date"));
         newHeader.append($("<th>").html("Time"));
         table.append(newHeader);
