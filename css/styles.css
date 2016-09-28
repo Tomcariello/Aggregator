@@ -17,6 +17,7 @@ td > a {
 }
 th {
 	font-size: 20px;
+  text-align: center;
 }
 
 td {
@@ -55,7 +56,7 @@ td {
   background-color: transparent;
   font-family: 'Raleway', sans-serif;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 20px;
   outline: none;
   text-align: center;
@@ -74,15 +75,16 @@ td {
 
 #seatgeek {
   color: #fff;
-    height:450px;
+  height:450px;
   width:500px;
   border:1px hidden #ccc;
   overflow-y:scroll;
+  margin-left: 15px;
 }
 
 #bettingOdds {
   color: #fff
-    height:450px;
+  height:450px;
   width:500px;
   border:1px hidden #ccc;
   overflow-y:scroll;
@@ -144,7 +146,7 @@ hr {
 }
 
 #upBox {
-  font-size: 25px;
+  font-size: 45px;
 }
 
 #wholeDiv {
@@ -155,11 +157,13 @@ hr {
   width: 100%;
   background-repeat: no-repeat;
   display: none;
+ /* height: 100%;*/
+
 }
 
-#pic {
+/*#pic {
   width: 100%;
-}
+}*/
 
 /*.carousel { z-index: -99; }*/ /* keeps this behind all content */
 /*.carousel .item {
