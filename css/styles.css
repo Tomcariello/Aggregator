@@ -53,14 +53,14 @@ td {
 #submit {
   border-color: #fff;
   color: #fff;
-  background-color: transparent;
+  background-color: #FF4500;
   font-family: 'Raleway', sans-serif;
   border-radius: 20px;
   font-size: 20px;
   margin-top: 20px;
   outline: none;
   text-align: center;
-  opacity: .50;
+  opacity: .80;
 }
 
 #resultsHead {
