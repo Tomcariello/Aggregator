@@ -39,7 +39,7 @@ function printSportInfo(currentSeatResult){
         var lowestPrice;
         var highestPrice;
         for (i=0; i<currentSeatResult.meta.total; i++){
-
+              // to remove null values from our price.
              if(currentSeatResult.events[i].stats.lowest_price == null){
               lowestPrice = "";
               highestPrice ="NA";
@@ -47,10 +47,8 @@ function printSportInfo(currentSeatResult){
                 lowestPrice = "$" + currentSeatResult.events[i].stats.lowest_price + ".00-";
                 highestPrice = "$" + currentSeatResult.events[i].stats.highest_price + ".00";
               }
-           
           // Creating links to the pushed data and storing them under their respective variables.
           var newRow = $('<tr>');
-
           var titleLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].short_title);
           var lowestPriceLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html( lowestPrice  +  highestPrice );
           // to seperate  date from time, we use split().
@@ -65,16 +63,15 @@ function printSportInfo(currentSeatResult){
           var hours =time.split(":");
           console.log(hours[0]);
           var ampm = "AM"
+          // conversion of hours from military time to standard time
           if (hours[0] > 12) {
             hours[0] = hours[0]-12;
             ampm = "PM";
             console.log(hours[0]);
           }
           console.log(ampm)
-
           var dateLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(date);
           var timeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(hours[0] + ":" + hours[1] +  ampm);
-
           // Appending these links to their respective columns.
           newRow.append($("<td>").html(titleLink));
           newRow.append($("<td>").html(lowestPriceLink));
