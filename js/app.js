@@ -91,7 +91,7 @@ function changeBackground(sport) {
 
 timerTarget = setInterval(function(){
   changeJumbotron();
-},5000); 
+},10000); 
 
 function changeJumbotron(){
   $('.intro').css("background-image", "url(" + displayImages[i] + ")");
