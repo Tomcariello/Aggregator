@@ -2,7 +2,7 @@
 // created Client ID with seatGeek
 // Client ID:  NTc3MjcxNHwxNDc0NDk4NTQx
 // Secret: u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W
-var currentSeatResult; 
+
 // calling a function displaySportInfo 
 function displaySportInfo(sport,postal_code){
   // setting seatgeek API for sport and postal code in query url variable.
@@ -17,6 +17,9 @@ function displaySportInfo(sport,postal_code){
 
     currentSeatResult = response;
     printSportInfo(currentSeatResult);
+
+    //calling Tom's function to attempt to link the APIs
+    printEverything();
    
   })
 }

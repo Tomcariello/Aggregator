@@ -1,6 +1,7 @@
 //Initialize variables
 var zipCodeToSearch;
 var searchTermToSearch;
+var currentSeatResult; 
 var i = 0;
 var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"
 ];
@@ -12,7 +13,7 @@ $('#upBox').on('click', function() {
   })
 
 $('#submit').on('click', function() {
-  console.log("button clicked");
+  // console.log("button clicked");
 
   //obtain zip code
   zipCodeToSearch = $('#zipCode').val().trim();
@@ -46,7 +47,7 @@ $('#submit').on('click', function() {
     } else if (searchTermToSearch == "Mixed Martial Arts") {
       searchTermToSearch = "mma";
     }
-   
+
     //call seatgeek API with necessary info
     displaySportInfo(searchTermToSearch,zipCodeToSearch);
 
@@ -60,8 +61,10 @@ $('#submit').on('click', function() {
       $('#bettingOdds').html(data);
     });
   }
-
+  
   changeBackground(searchTermToSearch);
+
+  
 
   //Animate to the data section
   $('html, body').animate({
@@ -99,4 +102,21 @@ function changeJumbotron(){
   if (i >= displayImages.length){
     i=0
   }
+}
+
+
+
+function printEverything() {
+  //pull Seatgeek home team & game start time
+  var seatgeekHomeTeamName = currentSeatResult.events[0].performers[0].name;
+  var seatgeekGameDate = currentSeatResult.events[0].datetime_local;
+  
+  //call date conversion function to get something useful.
+  convertDate();
+  
+  console.log(seatgeekHomeTeamName + "|" + seatgeekGameDate);
+}
+
+function convertDate(dateToConvert){
+
 }
