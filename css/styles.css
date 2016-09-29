@@ -83,13 +83,12 @@ td {
 }
 
 #bettingOdds {
-  color: #fff
+  color: #fff;
   height:450px;
   width:500px;
   border:1px hidden #ccc;
   overflow-y:scroll;
 }
-
 
 /*#aboutDiv {
   margin-top: -86px
@@ -159,7 +158,16 @@ hr {
   background-repeat: no-repeat;
   display: none;
  /* height: 100%;*/
+}
+td {
+  text-align: center;
+}
 
+.transition {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 /*#pic {
