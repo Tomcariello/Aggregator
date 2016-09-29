@@ -44,8 +44,10 @@ function printSportInfo(currentSeatResult){
               lowestPrice = "";
               highestPrice ="NA";
               }else{
-                lowestPrice = "$" + currentSeatResult.events[i].stats.lowest_price + ".00-";
-                highestPrice = "$" + currentSeatResult.events[i].stats.highest_price + ".00";
+                // storing the value of lowest price in a variable and putting comma after significant 3 digits using toLocaleString function.
+                lowestPrice = "$" + (currentSeatResult.events[i].stats.lowest_price).toLocaleString("en") + ".00-";
+                // storing the value of highest price in a variable and putting comma after significant 3 digits using toLocaleString function.
+                highestPrice = "$" + (currentSeatResult.events[i].stats.highest_price).toLocaleString("en") + ".00";
               }
           // Creating links to the pushed data and storing them under their respective variables.
           var newRow = $('<tr>');
@@ -56,7 +58,7 @@ function printSportInfo(currentSeatResult){
           var timeSplit = currentSeatResult.events[i].datetime_local.split("T");
           var date = timeSplit[0];
           // created a variable which stores date in a new Date function
-           var d =new Date(date) ;
+          var d =new Date(date) ;
           var time = timeSplit[1];
           // to remove seconds display from the time.
           var secRemoveTime = time.split("",5);
