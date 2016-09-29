@@ -29,6 +29,7 @@ curl_close($ch);
 
 // Decode Json
 $data = json_decode($result, true);
+$jsonOddsData = json_encode($result, true);
 
 //Generate table, table headers
 $content = '<table border ="1">';
