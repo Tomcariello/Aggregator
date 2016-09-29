@@ -60,6 +60,7 @@ td {
   margin-top: 20px;
   outline: none;
   text-align: center;
+  opacity: .50;
 }
 
 #resultsHead {
