@@ -3,7 +3,7 @@ var zipCodeToSearch;
 var searchTermToSearch;
 var currentSeatResult; 
 var i = 0;
-var oddsArray
+var oddsArray;
 var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"
 ];
 
