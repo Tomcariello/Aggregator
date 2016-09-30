@@ -119,15 +119,15 @@ function convertOddsToJSON() {
   oddsData = JSON.stringify(oddsData);
   oddsString = oddsData[0];
 
-  oddsArray = oddsString.split("|");
+  // oddsArray = oddsString.split("|");
 
 
-  for (i=0; i < oddsArray.length-3; i+4) {
-    console.log(oddsArray[i]);
-    console.log(oddsArray[i+2]);
-    console.log(oddsArray[i+3]);
-    console.log(oddsArray[i+4]);
-  }
+  // for (i=0; i < oddsArray.length-3; i+4) {
+  //   console.log(oddsArray[i]);
+  //   console.log(oddsArray[i+2]);
+  //   console.log(oddsArray[i+3]);
+  //   console.log(oddsArray[i+4]);
+  // }
 }
 
 
