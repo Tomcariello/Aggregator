@@ -116,8 +116,8 @@ function changeJumbotron(){
 
 function convertOddsToJSON() {
   var oddsData = $('#phpDataHere').text();
-  var oddsArray = oddsData("|");
-  console.log(oddArray);
+  var oddsArray = oddsData.split("|");
+  console.log(oddsArray);
 
   // oddsArray = oddsString.split("|");
 
