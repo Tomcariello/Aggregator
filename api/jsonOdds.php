@@ -32,8 +32,9 @@ $data = json_decode($result, true);
 
 //Generate table, table headers
 $content = 'Testing';
-$withComma = implode(",", $data);
-echo $withComma;
+ foreach ($data as $trend){         
+   echo $trend['text']."\n";     
+  } 
 
 
 //added . below to not overwrite the line above
