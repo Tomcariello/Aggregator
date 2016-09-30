@@ -35,6 +35,7 @@ $content = 'Testing';
 
  foreach ($data as $game){         
    $content .= $game['HomeTeam']."\n";     
+   $content .= $game['MatchTime']."\n"; 
   } 
 
 
