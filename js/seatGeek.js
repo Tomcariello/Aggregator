@@ -6,7 +6,7 @@
 // calling a function displaySportInfo 
 function displaySportInfo(sport,postal_code){
   // setting seatgeek API for sport and postal code in query url variable.
-  var queryURL = 'https://api.seatgeek.com/2/events?q='+sport+'&postal_code='+postal_code+'&client_id=NTc3MjcxNHwxNDc0NDk4NTQx&client_secret=u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W';
+  var queryURL = 'https://api.seatgeek.com/2/events?q='+sport+'&postal_code='+postal_code+'&range=100mi&client_id=NTc3MjcxNHwxNDc0NDk4NTQx&client_secret=u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W';
   // Making an ajax get request for the query url to obtain data.
   $.ajax({
     url:queryURL,
