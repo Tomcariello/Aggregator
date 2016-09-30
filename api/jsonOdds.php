@@ -31,7 +31,8 @@ curl_close($ch);
 $data = json_decode($result, true);
 
 //Generate table, table headers
-$content = $data;
+$content = 'Testing';
+$content .= $data;
 
 //added . below to not overwrite the line above
 $content .= '<table border ="1">';
