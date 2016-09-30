@@ -29,6 +29,7 @@ curl_close($ch);
 
 // Decode Json
 $data = json_decode($result, true);
+// $jsonOddsData = json_encode($result, true);
 
 //Generate table, table headers
 $content = '<table border ="1">';
@@ -103,3 +104,14 @@ $content .= '</table>';
 echo $content;
 }
 ?>
+
+<script type="text/javascript">
+console.log("writing JS after PHP");
+var jsonOddsData = <?php echo json_encodejson_encode($result, true); ?>;
+/* var book = {
+    "title": "JavaScript: The Definitive Guide",
+    "author": "David Flanagan",
+    "edition": 6
+}; */
+alert(jsonOddsData);
+</script>

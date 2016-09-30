@@ -52,7 +52,7 @@ $('#submit').on('click', function() {
     displaySportInfo(searchTermToSearch,zipCodeToSearch);
 
     //call betting odds API with necessary info
-    getSportsObject(searchTermToSearch);
+    // getSportsObject(searchTermToSearch);
 
     //update page with results from JSON odds API
     // $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
