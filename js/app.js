@@ -3,6 +3,7 @@ var zipCodeToSearch;
 var searchTermToSearch;
 var currentSeatResult; 
 var i = 0;
+var oddsArray
 var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"
 ];
 
@@ -65,10 +66,11 @@ $('#submit').on('click', function() {
       console.log("trying to print to the hidden div");
       $('#phpDataHere').html("");
       $('#phpDataHere').html(data);
+      convertOddsToJSON();
     });
   }
 
-  convertOddsToJSON();
+  
   
   changeBackground(searchTermToSearch);
 
@@ -114,7 +116,7 @@ function changeJumbotron(){
 
 function convertOddsToJSON() {
   var OddsData = $('#phpDataHere').contents();
-  var oddsArray = OddsData.split("|");
+  oddsArray = OddsData.split("|");
 
   for (i=0; i < oddsArray.length-3; i+4) {
     console.log(oddsArray[i]);
