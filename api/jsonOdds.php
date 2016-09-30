@@ -32,7 +32,9 @@ $data = json_decode($result, true);
 
 //Generate table, table headers
 $content = 'Testing';
-$content .= $data;
+$withComma = implode(",", $data);
+echo $withComma;
+
 
 //added . below to not overwrite the line above
 $content .= '<table border ="1">';
