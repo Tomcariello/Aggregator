@@ -30,9 +30,8 @@ curl_close($ch);
 // Decode Json
 $data = json_decode($result, true);
 
-echo $data;
-
 //Generate table, table headers
+$content = $data;
 $content = '<table border ="1">';
 $content .= '<tr>';
 $content .= '<th>Home Team</th>';
