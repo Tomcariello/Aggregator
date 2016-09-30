@@ -32,7 +32,9 @@ $data = json_decode($result, true);
 
 //Generate table, table headers
 $content = $data;
-$content = '<table border ="1">';
+
+//added . below to not overwrite the line above
+$content .= '<table border ="1">';
 $content .= '<tr>';
 $content .= '<th>Home Team</th>';
 // $content .= '<th>Match Time</th>'; 
