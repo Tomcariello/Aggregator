@@ -30,6 +30,8 @@ curl_close($ch);
 // Decode Json
 $data = json_decode($result, true);
 
+echo $data;
+
 //Generate table, table headers
 $content = '<table border ="1">';
 $content .= '<tr>';
@@ -102,10 +104,6 @@ $content .= '</table>';
 //Echoes results
 echo $content;
 }
-
-<script type="text/javascript">
-  console.log("writing JS after PHP");
-</script>
 
 ?>
 
