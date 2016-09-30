@@ -46,7 +46,7 @@ $content = '<p>';
     }
     $content.= $game['AwayTeam'];
     $content.= '%';
-    $game['MatchTime'];
+    $content.= $game['MatchTime'];
     $content.= '|';
   
   }
