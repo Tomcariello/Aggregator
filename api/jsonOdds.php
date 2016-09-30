@@ -32,8 +32,9 @@ $data = json_decode($result, true);
 
 //Generate table, table headers
 $content = 'Testing';
+
  foreach ($data as $trend){         
-   echo $trend['text']."\n";     
+   $content .= $trend['text']."\n";     
   } 
 
 
