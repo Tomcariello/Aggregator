@@ -61,7 +61,8 @@ $('#submit').on('click', function() {
       $('#bettingOdds').html(data);
     });
 
-    $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
+    $.get('api/jsonOdds_print.php?action=' + searchTermToSearch, function(data) {
+      console.log("trying to print to the hidden div");
       $('phpDataHere').html(data);
     });
   }

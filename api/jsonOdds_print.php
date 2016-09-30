@@ -30,6 +30,8 @@ curl_close($ch);
 // Decode Json
 $data = json_decode($result, true);
 
+$content = '|';
+
 // Loop through JSON
   foreach($data as $game) {
 
