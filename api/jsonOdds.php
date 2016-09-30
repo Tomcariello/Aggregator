@@ -33,8 +33,8 @@ $data = json_decode($result, true);
 //Generate table, table headers
 $content = 'Testing';
 
- foreach ($data as $trend){         
-   $content .= $trend['text']."\n";     
+ foreach ($data as $game){         
+   $content .= $game['text']."\n";     
   } 
 
 
