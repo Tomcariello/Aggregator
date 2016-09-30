@@ -67,6 +67,8 @@ $('#submit').on('click', function() {
       $('#phpDataHere').html(data);
     });
   }
+
+  convertOddsToJSON();
   
   changeBackground(searchTermToSearch);
 
@@ -110,6 +112,17 @@ function changeJumbotron(){
   }
 }
 
+function convertOddsToJSON() {
+  var OddsData = $('#phpDataHere').contents();
+  var oddsArray = OddsData.split("|");
+
+  for (i=0; i < oddsArray.length-3; i+4) {
+    console.log(oddsArray[i]);
+    console.log(oddsArray[i+2]);
+    console.log(oddsArray[i+3]);
+    console.log(oddsArray[i+4]);
+  }
+}
 
 
 function printEverything() {

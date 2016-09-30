@@ -30,27 +30,27 @@ curl_close($ch);
 // Decode Json
 $data = json_decode($result, true);
 
-$content = '<p>';
+// $content = '<p>';
 
 // Loop through JSON
   foreach($data as $game) {
 
     $content.= $game['HomeTeam'];
-    $content.= '%';
+    $content.= '|';
     
     foreach($game['Odds'] as $odds) {
       if($odds['OddType']=='Game') {
           $content.= $odds['PointSpreadHome'];
-          $content.= '%';
+          $content.= '|';
       }
     }
     $content.= $game['AwayTeam'];
-    $content.= '%';
+    $content.= '|';
     $content.= $game['MatchTime'];
     $content.= '|';
   
   }
-$content.= '</p>';
+// $content.= '</p>';
 //Echoes results
 echo $content;
 }
