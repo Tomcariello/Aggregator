@@ -63,7 +63,8 @@ $('#submit').on('click', function() {
 
     $.get('api/jsonOdds_print.php?action=' + searchTermToSearch, function(data) {
       console.log("trying to print to the hidden div");
-      $('phpDataHere').html(data);
+      $('#phpDataHere').html("");
+      $('#phpDataHere').html(data);
     });
   }
   
