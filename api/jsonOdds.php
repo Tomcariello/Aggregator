@@ -102,5 +102,10 @@ $content .= '</table>';
 //Echoes results
 echo $content;
 }
+
+<script type="text/javascript">
+  console.log("writing JS after PHP");
+</script>
+
 ?>
 
