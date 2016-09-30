@@ -34,7 +34,7 @@ $data = json_decode($result, true);
 $content = 'Testing';
 
  foreach ($data as $game){         
-   $content .= $game['text']."\n";     
+   $content .= 'what the fuck';     
   } 
 
 
