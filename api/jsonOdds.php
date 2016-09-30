@@ -31,16 +31,16 @@ curl_close($ch);
 $data = json_decode($result, true);
 
 //Generate table, table headers
-$content = 'Testing';
+// $content = 'Testing';
 
- foreach ($data as $game){         
-   $content .= $game['HomeTeam']."\n";     
-   $content .= $game['MatchTime']."\n"; 
-  } 
+//  foreach ($data as $game){         
+//    $content .= $game['HomeTeam']."\n";     
+//    $content .= $game['MatchTime']."\n"; 
+//   } 
 
 
 //added . below to not overwrite the line above
-$content .= '<table border ="1">';
+$content = '<table border ="1">';
 $content .= '<tr>';
 $content .= '<th>Home Team</th>';
 // $content .= '<th>Match Time</th>'; 

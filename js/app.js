@@ -59,6 +59,7 @@ $('#submit').on('click', function() {
 
     $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
       $('#bettingOdds').html(data);
+      $('phpDataHere').html(data);
     });
   }
   
