@@ -186,30 +186,33 @@ function printSportAndBettingInfo() {
           newRow.append($("<td>").html(dateLink));
           newRow.append($("<td>").html(timeLink));
 
+          if (oddsData.length > 3) {
+            //See if there is corresponding betting data
+            for (j=0; j < oddsData.length-3; j += 4) {
+              var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
+              var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
+              var seatgeekGameDate = currentSeatResult.events[i].datetime_utc;
+              var matchedOdds = false;
+              // console.log("J is " + j + " and oddsData length is " + oddsData.length + " and matchedOdds is " + matchedOdds);
 
-          //See if there is corresponding betting data
-          for (j=0; j < oddsData.length-3; j += 4) {
-            var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
-            var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
-            var seatgeekGameDate = currentSeatResult.events[i].datetime_utc;
-            var matchedOdds = false;
-            // console.log("J is " + j + " and oddsData length is " + oddsData.length + " and matchedOdds is " + matchedOdds);
+              //From the API...
+              //odds date format is: 2016-10-01T23:10:00
+              //SG   date format is: 2016-09-30T19:05:00
 
-            //From the API...
-            //odds date format is: 2016-10-01T23:10:00
-            //SG   date format is: 2016-09-30T19:05:00
-
-            if (seatgeekHomeTeamName == oddsData[j] && seatgeekGameDate == oddsData[j + 3]) {
-              newRow.append($("<td>").html(oddsData[j]));
-              newRow.append($("<td>").html(oddsData[j + 1]));
-              newRow.append($("<td>").html(oddsData[j + 2]));
-              matchedOdds = true;
-              break;
-            } else if (j >= oddsData.length - 5 && matchedOdds == false) {
-              newRow.append($("<td>").attr("colspan", "3").html("Odds data unavailable."));
+              if (seatgeekHomeTeamName == oddsData[j] && seatgeekGameDate == oddsData[j + 3]) {
+                newRow.append($("<td>").html(oddsData[j]));
+                newRow.append($("<td>").html(oddsData[j + 1]));
+                newRow.append($("<td>").html(oddsData[j + 2]));
+                matchedOdds = true;
+                break;
+              } else if (j >= oddsData.length - 5 && matchedOdds == false) {
+                newRow.append($("<td>").attr("colspan", "3").html("Odds data unavailable."));
+              }
             }
+          } else {
+            newRow.append($("<td>").attr("colspan", "3").html("Odds data unavailable."));
           }
-          
+            
           table.append(newRow);
 
           // limiting the results to 9.
