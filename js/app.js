@@ -194,7 +194,8 @@ function printSportAndBettingInfo() {
           //See if there is corresponding betting data
           for (j=0; j < oddsData.length-3; j += 4) {
             var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
-            var seatgeekGameDate = currentSeatResult.events[i].datetime_local;
+            var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
+            var seatgeekGameDate = currentSeatResult.events[i].datetime_utc;
             var matchedOdds = false;
             // console.log("J is " + j + " and oddsData length is " + oddsData.length + " and matchedOdds is " + matchedOdds);
 
@@ -216,7 +217,7 @@ function printSportAndBettingInfo() {
           table.append(newRow);
 
           // limiting the results to 9.
-          if (i == 9) {
+          if (i == 99) {
             return false;
           }
         }
