@@ -35,7 +35,7 @@ function checkZipCode(zipCodeToSearch){
 
 $('#submit').on('click', function() {
   //make sure the results div is hidden/hide results from previous search
-  $('#APIData').css("display", "none");  
+  $('#seatgeek').html("");
 
   //obtain zip code
   zipCodeToSearch = $('#zipCode').val().trim();

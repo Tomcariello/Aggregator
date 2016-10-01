@@ -8,8 +8,8 @@ li	{
     margin: 15px;
 }
 table {
-  /*width: 900px;*/
   margin: auto;
+  min-width: 700px;
 }
 table, td, th {
 	border: 1px solid #ffffff;
