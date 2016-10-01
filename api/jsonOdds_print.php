@@ -7,7 +7,7 @@ $action = $_GET["action"];
 $url = 'https://jsonodds.com/api/odds/' . $action;
 
 
-if($action=='nba' || $action=='nhl') {
+if($action=='usedtobenba' || $action=='usedtobenhl') {
 echo 'No odds available. The ' . $action . ' season has not started.';
 }
 else {
