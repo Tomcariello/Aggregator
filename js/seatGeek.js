@@ -8,7 +8,7 @@ function displaySportInfo(sport,postal_code){
   // setting seatgeek API for sport and postal code in query url variable.
 
   //the commented out version includes a ticket range of 100 miles
-  var queryURL = 'https://api.seatgeek.com/2/events?q='+sport+'&postal_code='+postal_code+'&range=250mi&client_id=NTc3MjcxNHwxNDc0NDk4NTQx&client_secret=u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W';
+  var queryURL = 'https://api.seatgeek.com/2/events?q='+sport+'&postal_code='+postal_code+'&range=500mi&client_id=NTc3MjcxNHwxNDc0NDk4NTQx&client_secret=u8sVtIcKXsxPJxTrt8WTfkfRLYCvHXjlDMt2TD3W';
 
   // Making an ajax get request for the query url to obtain data.
   $.ajax({
