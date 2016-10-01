@@ -69,11 +69,11 @@ td {
 }
 
 #seatgeek {
-  color: #fff;
-  height:450px;
-  width:500px;
+  color: #000000;
+  /*height:450px;*/
+  /*width:500px;*/
   border:1px hidden #ccc;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   margin-left: 15px;
 }
 
@@ -141,7 +141,7 @@ hr {
 
 #upBox {
   font-size: 45px;
-  margin-left: 595px;
+  /*margin-left: 595px;*/
 }
 
 #wholeDiv {
@@ -154,9 +154,6 @@ hr {
   display: none;
  /* height: 100%;*/
 }
-/*#phpDataHere {
-  display: none;
-}*/
 
 td {
   text-align: center;
@@ -168,6 +165,12 @@ td {
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
+
+#phpDataHere {
+  display: none;
+}
+
+
 
 /*#pic {
   width: 100%;
