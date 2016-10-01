@@ -7,7 +7,8 @@ var oddsArray;
 var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"];
 
 var exampleOddsata = ["Texas Rangers", "-1.5", "Tampa Bay Rays", "2016-10-01T00:05:00", "New York Mets", "1.5", "Philadelphia Phillies", "2016-09-30T19:05:00", "Colorado Rockies", "-1.5", "Milwaukee Brewers", "2016-10-01T00:10:00", "Chicago White Sox", "-1.5", "Minnesota Twins", "2016-10-01T00:10:00", "Kansas City Royals", "1.5", "Cleveland Indians", "2016-10-01T00:15:00", "St. Louis Cardinals", "-1.5", "Pittsburgh Pirates", "2016-10-01T00:15:00", "Arizona Diamondbacks", "-1.5", "San Diego Padres", "2016-10-01T01:40:00", "Los Angeles Angels", "1.5", "Houston Astros", "2016-10-01T02:05:00", "Seattle Mariners", "-1.5", "Oakland Athletics", "2016-10-01T02:10:00", "San Francisco Giants", "-1.5", "Los Angeles Dodgers", "2016-10-01T02:15:00", "Cincinnati Reds", "1.5", "Chicago Cubs", "2016-10-01T20:10:00", "Kansas City Royals", "1.5", "Cleveland Indians", "2016-10-01T20:15:00", "Chicago White Sox", "-1.5", "Minnesota Twins", "2016-10-01T23:10:00", "Atlanta Braves", "1.5", "Detroit Tigers", "2016-10-01T23:10:00", "Arizona Diamondbacks", "-1.5", "San Diego Padres", "2016-10-02T00:10:00", "Colorado Rockies", "-1.5", "Milwaukee Brewers", "2016-10-02T00:10:00", "Los Angeles Angels", "1.5", "Houston Astros", "2016-10-02T01:05:00", "+"]
-var oddsData; //variable which contains the data returned from JSONodds after manipulation to get it into JS
+var exampleOddsString = "Arizona Diamondbacks|-1.5|San Diego Padres|2016-10-01T01:40:00|Los Angeles Angels|1.5|Houston Astros|2016-10-01T02:05:00|Seattle Mariners|-1.5|Oakland Athletics|2016-10-01T02:10:00|San Francisco Giants|-1.5|Los Angeles Dodgers|2016-10-01T02:15:00|Cincinnati Reds|1.5|Chicago Cubs|2016-10-01T20:10:00|Kansas City Royals|1.5|Cleveland Indians|2016-10-01T20:15:00|Chicago White Sox|-1.5|Minnesota Twins|2016-10-01T23:10:00|Atlanta Braves|1.5|Detroit Tigers|2016-10-01T23:10:00|Arizona Diamondbacks|-1.5|San Diego Padres|2016-10-02T00:10:00|Colorado Rockies|-1.5|Milwaukee Brewers|2016-10-02T00:10:00|Los Angeles Angels|1.5|Houston Astros|2016-10-02T01:05:00|";"
+var oddsData; //variable which contains the data converted to an array returned from JSONodds after manipulation to get it into JS
 
 //Set up Jumbotron slideshow
 timerTarget = setInterval(function(){
@@ -113,7 +114,7 @@ function changeJumbotron(){
 
 function convertOddsToJSON() {
    var oddsString= $('#phpDataHere').text();
-   oddsData = oddsString.split(|);
+   oddsData = oddsString.split("|");
    console.log(oddsData);
   // oddsData = exampleOddsata; //Use sample data so i don't have to keep pushing to heroku
   printSportAndBettingInfo()
@@ -195,7 +196,7 @@ function printSportAndBettingInfo() {
             var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
             var seatgeekGameDate = currentSeatResult.events[i].datetime_local;
             var matchedOdds = false;
-            console.log("J is " + j + " and oddsData length is " + oddsData.length + " and matchedOdds is " + matchedOdds);
+            // console.log("J is " + j + " and oddsData length is " + oddsData.length + " and matchedOdds is " + matchedOdds);
 
             //From the API...
             //odds date format is: 2016-10-01T23:10:00
