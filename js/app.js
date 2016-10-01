@@ -4,18 +4,35 @@ var searchTermToSearch;
 var currentSeatResult; 
 var i = 0;
 var oddsArray;
-var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"
-];
+var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"];
+
+var exampleOddsata = ["Texas Rangers", "-1.5", "Tampa Bay Rays", "2016-10-01T00:05:00", "New York Mets", "1.5", "Philadelphia Phillies", "2016-09-30T19:05:00", "Colorado Rockies", "-1.5", "Milwaukee Brewers", "2016-10-01T00:10:00", "Chicago White Sox", "-1.5", "Minnesota Twins", "2016-10-01T00:10:00", "Kansas City Royals", "1.5", "Cleveland Indians", "2016-10-01T00:15:00", "St. Louis Cardinals", "-1.5", "Pittsburgh Pirates", "2016-10-01T00:15:00", "Arizona Diamondbacks", "-1.5", "San Diego Padres", "2016-10-01T01:40:00", "Los Angeles Angels", "1.5", "Houston Astros", "2016-10-01T02:05:00", "Seattle Mariners", "-1.5", "Oakland Athletics", "2016-10-01T02:10:00", "San Francisco Giants", "-1.5", "Los Angeles Dodgers", "2016-10-01T02:15:00", "Cincinnati Reds", "1.5", "Chicago Cubs", "2016-10-01T20:10:00", "Kansas City Royals", "1.5", "Cleveland Indians", "2016-10-01T20:15:00", "Chicago White Sox", "-1.5", "Minnesota Twins", "2016-10-01T23:10:00", "Atlanta Braves", "1.5", "Detroit Tigers", "2016-10-01T23:10:00", "Arizona Diamondbacks", "-1.5", "San Diego Padres", "2016-10-02T00:10:00", "Colorado Rockies", "-1.5", "Milwaukee Brewers", "2016-10-02T00:10:00", "Los Angeles Angels", "1.5", "Houston Astros", "2016-10-02T01:05:00", "+"]
+var oddsData;
+
+//Set up Jumbotron slideshow
+timerTarget = setInterval(function(){
+  changeJumbotron();
+},10000); 
+
 
 $('#upBox').on('click', function() {
   $('html, body').animate({
     scrollTop: $("#mainWindow").offset().top
   }, 1000);
-  })
+})
+
+function checkZipCode(zipCodeToSearch){
+  if (zipCodeToSearch.length == 5) {
+    if (parseInt(zipCodeToSearch) != NaN) {
+      console.log("is a 5 digit number");
+      return false;
+    }
+  } else {
+    console.log("enter a valid zip code");
+  }
+}
 
 $('#submit').on('click', function() {
-  // console.log("button clicked");
-
   //obtain zip code
   zipCodeToSearch = $('#zipCode').val().trim();
   //Verify the zip code is a 5 digit numeric value before proceeding
@@ -58,9 +75,9 @@ $('#submit').on('click', function() {
     //update page with results from JSON odds API
     // $('#bettingOdds').html("Search JSONOdds for " + searchTermToSearch);
 
-    $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
-      $('#bettingOdds').html(data);
-    });
+    // $.get('api/jsonOdds.php?action=' + searchTermToSearch, function(data) {
+    //   $('#bettingOdds').html(data);
+    // });
 
     $.get('api/jsonOdds_print.php?action=' + searchTermToSearch, function(data) {
       console.log("trying to print to the hidden div");
@@ -70,11 +87,7 @@ $('#submit').on('click', function() {
     });
   }
 
-  
-  
   changeBackground(searchTermToSearch);
-
-  
 
   //Animate to the data section
   $('html, body').animate({
@@ -83,28 +96,12 @@ $('#submit').on('click', function() {
 
 });
 
-function checkZipCode(zipCodeToSearch){
-  if (zipCodeToSearch.length == 5) {
-    if (parseInt(zipCodeToSearch) != NaN) {
-      console.log("is a 5 digit number");
-      return false;
-    }
-  } else {
-    console.log("enter a valid zip code");
-  }
-
-}
-
 function changeBackground(sport) {
   // $('#mainWindow').css("background-image", "url(img/" + sport + ".jpg)");  
   $('#APIData').css("background-image", "url(img/" + sport + ".jpg)");  
   $('#APIData').css("display", "inline-block");  
 }
 
-
-timerTarget = setInterval(function(){
-  changeJumbotron();
-},10000); 
 
 function changeJumbotron(){
   $('.intro').css("background-image", "url(" + displayImages[i] + ")");
@@ -115,33 +112,110 @@ function changeJumbotron(){
 }
 
 function convertOddsToJSON() {
-  var oddsData = $('#phpDataHere').text();
-  var oddsArray = oddsData.split("|");
-  console.log(oddsArray);
+  // var oddsData = $('#phpDataHere').text();
+  oddsData = exampleOddsata;
+  printSportAndBettingInfo()
 
-  // oddsArray = oddsString.split("|");
-
-
-  // for (i=0; i < oddsArray.length-3; i+4) {
-  //   console.log(oddsArray[i]);
-  //   console.log(oddsArray[i+2]);
-  //   console.log(oddsArray[i+3]);
-  //   console.log(oddsArray[i+4]);
-  // }
 }
-
 
 function printEverything() {
   //pull Seatgeek home team & game start time
   var seatgeekHomeTeamName = currentSeatResult.events[0].performers[0].name;
   var seatgeekGameDate = currentSeatResult.events[0].datetime_local;
-  
-  //call date conversion function to get something useful.
-  convertDate();
-  
-  console.log(seatgeekHomeTeamName + "|" + seatgeekGameDate);
-}
-
-function convertDate(dateToConvert){
 
 }
+
+function printSportAndBettingInfo() {
+    // console.log(currentSeatResult.events[0].url);
+    if(currentSeatResult.meta.total > 0){
+        $('#seatgeek').html("");
+        var table = $('<table>');
+        $('#seatgeek').append(table);
+
+        // Storing the value of a dynamically created row in a variable
+        var newHeader = $('<tr>');
+        // Adding columns under row and pushing data respectively into it.
+        newHeader.append($("<th>").html("Event"));
+        newHeader.append($("<th>").html("Price"));
+        newHeader.append($("<th>").html("Date"));
+        newHeader.append($("<th>").html("Time"));
+        newHeader.append($("<th>").attr("colspan", "3").html("Betting Odds"));
+        table.append(newHeader);
+        var lowestPrice;
+        var highestPrice;
+
+
+        for (i=0; i<currentSeatResult.meta.total; i++){
+          if (currentSeatResult.events[i].stats.lowest_price == null) {
+            lowestPrice = "";
+            highestPrice ="NA";
+          } else {
+            lowestPrice = "$" + (currentSeatResult.events[i].stats.lowest_price).toLocaleString("en") + ".00-";
+            highestPrice = "$" + (currentSeatResult.events[i].stats.highest_price).toLocaleString("en") + ".00";
+          }
+
+          // Creating links to the pushed data and storing them under their respective variables.
+          var newRow = $('<tr>');
+          var titleLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(currentSeatResult.events[i].short_title);
+          var lowestPriceLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html( lowestPrice  +  highestPrice );
+          
+          // to seperate  date from time, we use split().
+          var convertedDateTime = currentSeatResult.events[i].datetime_local.split("T").join(" & ");
+          var timeSplit = currentSeatResult.events[i].datetime_local.split("T");
+          var date = timeSplit[0];
+          
+          // created a variable which stores date in a new Date function
+          var d =new Date(date) ;
+          var time = timeSplit[1];
+          
+          // to remove seconds display from the time.
+          var secRemoveTime = time.split("",5);
+          var hours =time.split(":");
+          var ampm = "AM"
+          
+          // conversion of hours from military time to standard time
+          if (hours[0] > 12) {
+            hours[0] = hours[0]-12;
+            ampm = "PM";
+          }
+
+          var dateLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(d.toDateString());
+          var timeLink = $('<a>').attr('href', currentSeatResult.events[i].url).attr("target", "new").html(hours[0] + ":" + hours[1] +  ampm);
+
+          newRow.append($("<td>").html(titleLink));
+          newRow.append($("<td>").html(lowestPriceLink));
+          newRow.append($("<td>").html(dateLink));
+          newRow.append($("<td>").html(timeLink));
+
+
+          //See if there is corresponding betting data
+          for (j=0; j < oddsData.length-3; j += 4) {
+            var seatgeekHomeTeamName = currentSeatResult.events[i].performers[0].name;
+            var seatgeekGameDate = currentSeatResult.events[i].datetime_local;
+            var matchedOdds = false;
+            console.log("J is " + j + " and oddsData length is " + oddsData.length + " and matchedOdds is " + matchedOdds);
+
+            //From the API...
+            //odds date format is: 2016-10-01T23:10:00
+            //SG   date format is: 2016-09-30T19:05:00
+
+            if (seatgeekHomeTeamName == oddsData[j] && seatgeekGameDate == oddsData[j + 3]) {
+              newRow.append($("<td>").html(oddsData[j]));
+              newRow.append($("<td>").html(oddsData[j + 1]));
+              newRow.append($("<td>").html(oddsData[j + 2]));
+              matchedOdds = true;
+              break;
+            } else if (j >= oddsData.length - 5 && matchedOdds == false) {
+              newRow.append($("<td>").attr("colspan", "3").html("Odds data unavailable."));
+            }
+          }
+          
+          table.append(newRow);
+
+          // limiting the results to 9.
+          if (i == 9) {
+            return false;
+          }
+        }
+      }
+    }

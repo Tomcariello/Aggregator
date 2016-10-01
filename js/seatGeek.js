@@ -16,10 +16,12 @@ function displaySportInfo(sport,postal_code){
   .done(function(response){
 
     currentSeatResult = response;
-    printSportInfo(currentSeatResult);
+    
+    //Original function that printed the ticket information independently
+    // printSportInfo(currentSeatResult);
 
     //calling Tom's function to attempt to link the APIs
-    printEverything();
+    // printSportAndBettingInfo();
    
   })
 }
