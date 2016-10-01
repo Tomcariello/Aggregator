@@ -112,7 +112,9 @@ function changeJumbotron(){
 }
 
 function convertOddsToJSON() {
-  oddsData = $('#phpDataHere').text();
+   var oddsString= $('#phpDataHere').text();
+   oddsData = oddsString.split(|);
+   console.log(oddsData);
   // oddsData = exampleOddsata; //Use sample data so i don't have to keep pushing to heroku
   printSportAndBettingInfo()
 
