@@ -217,7 +217,7 @@ function printSportAndBettingInfo() {
           table.append(newRow);
 
           // limiting the results to 9.
-          if (i == 99) {
+          if (i == 9) {
             return false;
           }
         }
