@@ -2,7 +2,7 @@
 var zipCodeToSearch;
 var searchTermToSearch;
 var currentSeatResult; 
-// var i = 0;
+var jumboTracker = 0;
 var oddsArray;
 var displayImages = ["img/jumbotron/cricketgame.jpg", "img/jumbotron/horserace.jpg", "img/jumbotron/mmafight.jpg", "img/jumbotron/NBA.jpg", "img/jumbotron/baseball.jpg", "img/jumbotron/NCAAB.jpg", "img/jumbotron/NCAAF.jpg", "img/jumbotron/NFL.jpg", "img/jumbotron/NHL.jpg", "img/jumbotron/soccer.jpg", "img/jumbotron/tennismatch.jpg", "img/jumbotron/wnba.jpg"];
 
@@ -105,10 +105,10 @@ function changeBackground(sport) {
 
 
 function changeJumbotron(){
-  $('.intro').css("background-image", "url(" + displayImages[i] + ")");
-  i++
-  if (i >= displayImages.length){
-    i=0
+  $('.intro').css("background-image", "url(" + displayImages[jumboTracker] + ")");
+  jumboTracker++;
+  if (jumboTracker >= displayImages.length){
+    jumboTracker=0;
   }
 }
 
