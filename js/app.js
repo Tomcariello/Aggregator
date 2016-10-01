@@ -34,6 +34,9 @@ function checkZipCode(zipCodeToSearch){
 }
 
 $('#submit').on('click', function() {
+  //make sure the results div is hidden/hide results from previous search
+  $('#APIData').css("display", "none");  
+
   //obtain zip code
   zipCodeToSearch = $('#zipCode').val().trim();
   //Verify the zip code is a 5 digit numeric value before proceeding
@@ -81,7 +84,7 @@ $('#submit').on('click', function() {
     // });
 
     $.get('api/jsonOdds_print.php?action=' + searchTermToSearch, function(data) {
-      console.log("trying to print to the hidden div");
+      // console.log("trying to print to the hidden div");
       $('#phpDataHere').html("");
       $('#phpDataHere').html(data);
       convertOddsToJSON();
@@ -120,13 +123,6 @@ function convertOddsToJSON() {
   printSportAndBettingInfo()
 
 }
-
-// function printEverything() {
-//   //pull Seatgeek home team & game start time
-//   var seatgeekHomeTeamName = currentSeatResult.events[0].performers[0].name;
-//   var seatgeekGameDate = currentSeatResult.events[0].datetime_local;
-
-// }
 
 function printSportAndBettingInfo() {
     // console.log(currentSeatResult.events[0].url);
